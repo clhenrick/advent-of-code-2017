@@ -1,3 +1,11 @@
+/*
+  Advent of Code: day 02 part 1
+  Given a spreadsheet consisting of rows of apparently-random numbers,
+  calculate the spreadsheet's checksum. For each row, determine the difference
+  between the largest value and the smallest value; the checksum is the sum of
+  all of these differences.
+*/
+
 const table =
 `179	2358	5197	867	163	4418	3135	5049	187	166	4682	5080	5541	172	4294	1397
 2637	136	3222	591	2593	1982	4506	195	4396	3741	2373	157	4533	3864	4159	142
