@@ -33,18 +33,16 @@ function parseTable(t) {
 
 function minArray(arr) {
   // find the minimum value in an array of numbers
-  return arr.reduce((cur, acc) => {
-    if (cur < acc) acc = cur;
-    return acc;
-  }, Infinity);
+  return arr.reduce((a, b) => {
+    return Math.min(a, b);
+  });
 }
 
 function maxArray(arr) {
   // find the maximum value in an array of numbers
-  return arr.reduce((cur, acc) => {
-    if (cur > acc) acc = cur;
-    return acc;
-  }, -Infinity);
+  return arr.reduce((a, b) => {
+    return Math.max(a, b);
+  });
 }
 
 function checksum(data) {
