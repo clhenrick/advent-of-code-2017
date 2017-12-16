@@ -1,26 +1,21 @@
 const fs = require('fs');
 
-const input = fs.readFileSync('./test-input.txt', { encoding: 'utf8' });
+const input = fs.readFileSync('./input.txt', { encoding: 'utf8' });
 const data = input.split('\n').map(d => Number(d));
+const len = data.length;
+let notSolved = true;
+let index = 0;
+let total = 0;
 
-function makeJumps(idx, arr, jumps) {
-	console.log('array index: %s', idx);
+while (notSolved) {
+	let value = data[index];
+	total += 1;
+	data[index] = value + 1;
+	index = index + value;
 
-	const value = arr[idx];
-	const len = arr.length;
+	console.log('array index: %s, total jumps: %s', index, total);
 
-	if (idx < arr.length - 1) {
-		jumps++; // increment jumps count
-		arr[idx] = value + 1; // increment the array value
-
-		console.log('value: %s, value incremented: %s, total jumps: %s', value, arr[idx], jumps);
-
-		// move to the next position in the array using the original array value
-		return makeJumps(idx + value, arr, jumps);
-	} else {
-		// if we are out of bounds return the number of jumps
-		return jumps;
+	if (index > len - 1) {
+		notSolved = false;
 	}
 }
-
-console.log(makeJumps(0, data, 0));
